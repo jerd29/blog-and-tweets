@@ -15,6 +15,14 @@
                     @endif
 
                     {{ $entry->content }}
+
+                    @if ($entry->user_id === auth()->id())
+                    <hr>
+                        <a href="{{ url('/entries/'.$entry->id.'/edit')}}" class="btn btn-primary">
+                            Edit entry
+                        </a>
+                    @endif
+
                 </div>
             </div>
         </div>
